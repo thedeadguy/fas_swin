@@ -1,6 +1,6 @@
 # FAS using SWIN
 
-- Validation:: 100%|██████████| 93/93 [00:39<00:00,  2.38it/s]
+
 - Accuracy:      98.6
 - F1 Score:      97.1
 - AUC:     0.9957
