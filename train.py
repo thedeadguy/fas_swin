@@ -12,9 +12,7 @@ for param in model.parameters():
 
 # unfreeze 'head' and 'layers.3'
 for name, param in model.named_parameters():
-    if name.startswith("head"):
-        param.requires_grad = True
-    elif name.startswith("layers.3"):
+    if name.startswith(("head", "layers.3")):
         param.requires_grad = True
 
 trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)

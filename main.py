@@ -6,6 +6,7 @@ from facenet_pytorch import MTCNN
 from torchvision import transforms
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# DEVICE = torch.device("mps" if torch.mps.is_available() else "cpu")
 MODEL_PATH = "checkpoints/best_model.pth"
 OPTIMAL_THRESHOLD = 0.9617
 
@@ -38,8 +39,8 @@ img_tranform = transforms.Compose(
 mtcnn = MTCNN(keep_all=True, device=DEVICE)
 
 print("Starting webcam.... Press 'q' to quit")
-# cap = cv.VideoCapture(0)
-cap = cv.VideoCapture("http://10.197.16.240:8080/video")
+cap = cv.VideoCapture(0)
+# cap = cv.VideoCapture("http://10.197.16.240:8080/video")
 
 while True:
     ret, frame = cap.read()
